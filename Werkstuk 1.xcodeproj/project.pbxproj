@@ -14,6 +14,8 @@
 		74A6E5E920A1A68000D20D63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A6E5E720A1A68000D20D63 /* LaunchScreen.storyboard */; };
 		74A6E5F420A1A68100D20D63 /* Werkstuk_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6E5F320A1A68100D20D63 /* Werkstuk_1Tests.swift */; };
 		74A6E5FF20A1A68100D20D63 /* Werkstuk_1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6E5FE20A1A68100D20D63 /* Werkstuk_1UITests.swift */; };
+		74A6E60D20A1A92F00D20D63 /* Persoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6E60C20A1A92F00D20D63 /* Persoon.swift */; };
+		74A6E60F20A1A99100D20D63 /* Adres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6E60E20A1A99100D20D63 /* Adres.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		74A6E5FA20A1A68100D20D63 /* Werkstuk 1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Werkstuk 1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A6E5FE20A1A68100D20D63 /* Werkstuk_1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Werkstuk_1UITests.swift; sourceTree = "<group>"; };
 		74A6E60020A1A68100D20D63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74A6E60C20A1A92F00D20D63 /* Persoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persoon.swift; sourceTree = "<group>"; };
+		74A6E60E20A1A99100D20D63 /* Adres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adres.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				74A6E5E520A1A68000D20D63 /* Assets.xcassets */,
 				74A6E5E720A1A68000D20D63 /* LaunchScreen.storyboard */,
 				74A6E5EA20A1A68100D20D63 /* Info.plist */,
+				74A6E60C20A1A92F00D20D63 /* Persoon.swift */,
+				74A6E60E20A1A99100D20D63 /* Adres.swift */,
 			);
 			path = "Werkstuk 1";
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A6E5E120A1A68000D20D63 /* ViewController.swift in Sources */,
+				74A6E60F20A1A99100D20D63 /* Adres.swift in Sources */,
 				74A6E5DF20A1A68000D20D63 /* AppDelegate.swift in Sources */,
+				74A6E60D20A1A92F00D20D63 /* Persoon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
