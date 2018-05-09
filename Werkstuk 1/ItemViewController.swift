@@ -43,19 +43,17 @@ class ItemViewController: UIViewController {
         let annotation:MijnAnnotation = MijnAnnotation(coordinate: coordinate , title: temp.naam)
         
         self.MijnMap.addAnnotation(annotation)
-        self.MijnMap.selectAnnotation(annotation, animated: true)        
+        self.MijnMap.selectAnnotation(annotation, animated: true)
+        
+        let center = CLLocationCoordinate2D(latitude: (temp.gps.latitude), longitude: (temp.gps.longitude))
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        MijnMap.setRegion(region, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let center = CLLocationCoordinate2D(latitude: (temp.gps.latitude), longitude: (temp.gps.longitude))
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
-        
-        mapView.setRegion(region, animated: true)
     }
     
 
