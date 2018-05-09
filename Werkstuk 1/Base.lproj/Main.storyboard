@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,6 +43,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="JeN-LM-8WF" kind="show" id="KfN-i9-5ft"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -53,6 +58,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMS-P9-7vP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4" y="82.3088455772114"/>
+        </scene>
+        <!--Item View Controller-->
+        <scene sceneID="QRh-1O-kwg">
+            <objects>
+                <viewController id="JeN-LM-8WF" customClass="ItemViewController" customModule="Werkstuk_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eqs-zw-GF3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Naam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffx-hJ-1K6">
+                                <rect key="frame" x="16" y="294" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDu-42-lvn">
+                                <rect key="frame" x="16" y="84" width="343" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="jep-py-UPT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Telefoonnummer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQ6-Or-3OH">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Straat &amp; huisnummer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mj3-7F-ivK">
+                                <rect key="frame" x="16" y="352" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gemeente &amp; postcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAn-qd-sgt">
+                                <rect key="frame" x="16" y="381" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vDu-42-lvn" firstAttribute="top" secondItem="Kej-77-yBe" secondAttribute="top" constant="60" id="A5m-jy-4gt"/>
+                            <constraint firstItem="vDu-42-lvn" firstAttribute="trailing" secondItem="eqs-zw-GF3" secondAttribute="trailingMargin" id="CfK-wM-Xxx"/>
+                            <constraint firstItem="vDu-42-lvn" firstAttribute="leading" secondItem="Ffx-hJ-1K6" secondAttribute="leading" id="DBW-0Q-OoM"/>
+                            <constraint firstItem="vDu-42-lvn" firstAttribute="trailing" secondItem="Ffx-hJ-1K6" secondAttribute="trailing" id="lwU-Rd-MzR"/>
+                            <constraint firstItem="vDu-42-lvn" firstAttribute="leading" secondItem="eqs-zw-GF3" secondAttribute="leadingMargin" id="xrV-vE-y1A"/>
+                            <constraint firstItem="Kej-77-yBe" firstAttribute="bottom" secondItem="Ffx-hJ-1K6" secondAttribute="bottom" constant="154" id="ywy-Es-J0r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kej-77-yBe"/>
+                    </view>
+                    <connections>
+                        <outlet property="GSMNummer" destination="RQ6-Or-3OH" id="xlh-8P-agc"/>
+                        <outlet property="GemeentePostcode" destination="eAn-qd-sgt" id="ffL-ac-jSW"/>
+                        <outlet property="PersoonFoto" destination="vDu-42-lvn" id="QCg-xO-dI2"/>
+                        <outlet property="StraatHuisnummer" destination="mj3-7F-ivK" id="AcS-ZZ-CVG"/>
+                        <outlet property="VolledigeNaam" destination="Ffx-hJ-1K6" id="W0X-5B-Vxe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uEj-Sr-76C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752.79999999999995" y="80.50974512743629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XHG-B1-qVy">

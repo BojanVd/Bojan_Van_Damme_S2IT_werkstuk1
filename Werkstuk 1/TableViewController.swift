@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class TableViewController: UITableViewController {
+    var personen = [Persoon]()
     
-    var personen = ["Amber Sannen", "Bojan Van Damme", "Annelies Van Minsel"]
+    //var personen = ["Amber Sannen", "Bojan Van Damme", "Annelies Van Minsel"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +23,14 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        let adresSteveRogers = Adres(straat: "Captainstraat", huisnummer: 1, postcode: 2000, gemeente: "New York")
+        let adresNatashaRomanoff = Adres(straat: "Widowlaan", huisnummer: 20, postcode: 3550, gemeente: "Las Vegas")
+        
+        personen.append(Persoon(naam: "Rogers", voornaam: "Steve", foto: UIImage(named: "Steve")!, adres: adresSteveRogers, gps: CLLocationCoordinate2D (latitude: 39.545179, longitude: -76.827946), telefoonnummer: 1207))
+        personen.append(Persoon(naam: "Romanoff", voornaam: "Natasha", foto: UIImage(named: "Natasha")!,adres: adresNatashaRomanoff, gps: CLLocationCoordinate2D (latitude: 37.899604, longitude: -79.113103), telefoonnummer: 1234))
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,12 +53,28 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = self.personen[indexPath.row]
+        let persoon = personen[indexPath.row]
         
-        //cell.detailTextLabel?.text ="iets"
-        //cell.imageView?.image = UIImage(named:"mars")
+        cell.textLabel?.text = persoon.naam + " " + persoon.voornaam
+        cell.detailTextLabel?.text = persoon.telefoonnummer.description
+        cell.imageView?.image = persoon.foto
 
         return cell
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if let nextVC = segue.destination as? ItemViewController
+        {
+            let indexPath = self.tableView.indexPathForSelectedRow!
+            
+            nextVC.temp = self.personen[indexPath.row]
+        }
+        
     }
     
 
@@ -87,21 +112,4 @@ class TableViewController: UITableViewController {
         return true
     }
     */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if let nextVC = segue.destination as? ViewController
-        {
-            let indexPath = self.tableView.indexPathForSelectedRow!
-            
-            nextVC.temp = self.personen[indexPath.row]
-        }
-    }
-    
-
 }

@@ -16,7 +16,7 @@ class Persoon {
     var voornaam: String
     var foto: UIImage
     var adres: Adres
-    var gps: CCLocationCoordinate2D
+    var gps: CLLocationCoordinate2D
     var telefoonnummer: Int
     
     init(){
@@ -28,11 +28,12 @@ class Persoon {
         telefoonnummer = 0
     }
     
-    init(naam: String, voornaam: String, foto:UIImage, adres: Adres, telefoonnummer: Int) {
+    init(naam: String, voornaam: String, foto: UIImage, adres: Adres, gps: CLLocationCoordinate2D, telefoonnummer: Int) {
         self.naam = naam
         self.voornaam = voornaam
         self.foto = foto
-        self.telefoonnummer = telefoonnummer
         self.adres = adres
+        self.gps = gps
+        self.telefoonnummer = telefoonnummer
     }
 }
