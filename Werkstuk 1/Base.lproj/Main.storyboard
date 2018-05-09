@@ -70,9 +70,13 @@
                         <subviews>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vDu-42-lvn">
                                 <rect key="frame" x="0.0" y="64" width="375" height="204"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="204" id="S4x-yd-h57"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SGs-MZ-sF0" appends="YES" id="ZFO-Xz-WOD"/>
+                                </connections>
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQl-eL-idQ">
                                 <rect key="frame" x="0.0" y="463" width="375" height="204"/>
@@ -168,8 +172,37 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEj-Sr-76C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SGs-MZ-sF0">
+                    <connections>
+                        <segue destination="ctr-h0-mD8" kind="show" identifier="imgTap" id="Nxr-xh-Ndd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1092" y="80.50974512743629"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="3vE-Bm-4dq">
+            <objects>
+                <viewController id="ctr-h0-mD8" customClass="ImageViewController" customModule="Werkstuk_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aM4-jv-5cJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmq-5O-PKY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Pg3-nU-MMY"/>
+                    </view>
+                    <connections>
+                        <outlet property="UIimg" destination="jmq-5O-PKY" id="vxu-db-L8I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hlS-1P-Ojd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1845.5999999999999" y="81.409295352323838"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XHG-B1-qVy">
