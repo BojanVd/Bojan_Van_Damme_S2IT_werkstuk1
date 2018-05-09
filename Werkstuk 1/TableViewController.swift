@@ -12,8 +12,6 @@ import CoreLocation
 
 class TableViewController: UITableViewController {
     var personen = [Persoon]()
-    
-    //var personen = ["Amber Sannen", "Bojan Van Damme", "Annelies Van Minsel"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +24,17 @@ class TableViewController: UITableViewController {
         
         let adresSteveRogers = Adres(straat: "Captainstraat", huisnummer: 1, postcode: 2000, gemeente: "New York")
         let adresNatashaRomanoff = Adres(straat: "Widowlaan", huisnummer: 20, postcode: 3550, gemeente: "Las Vegas")
+        var gpsSteve = CLLocationCoordinate2D()
+        var gpsNatasha = CLLocationCoordinate2D()
         
-        personen.append(Persoon(naam: "Rogers", voornaam: "Steve", foto: UIImage(named: "Steve")!, adres: adresSteveRogers, gps: CLLocationCoordinate2D (latitude: 39.545179, longitude: -76.827946), telefoonnummer: 1207))
-        personen.append(Persoon(naam: "Romanoff", voornaam: "Natasha", foto: UIImage(named: "Natasha")!,adres: adresNatashaRomanoff, gps: CLLocationCoordinate2D (latitude: 37.899604, longitude: -79.113103), telefoonnummer: 1234))
+        if let tbc = self.tabBarController as? TabController{
+            gpsSteve = tbc.coorSteve
+            gpsNatasha = tbc.coorNatasha
+        }
+        
+        
+        personen.append(Persoon(naam: "Rogers", voornaam: "Steve", foto: UIImage(named: "Steve")!, adres: adresSteveRogers, gps: gpsSteve , telefoonnummer: "+32 412 34 56 78"))
+        personen.append(Persoon(naam: "Romanoff", voornaam: "Natasha", foto: UIImage(named: "Natasha")!,adres: adresNatashaRomanoff, gps: gpsNatasha, telefoonnummer: "+32 487 65 43 21"))
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,8 +61,8 @@ class TableViewController: UITableViewController {
         // Configure the cell...
         let persoon = personen[indexPath.row]
         
-        cell.textLabel?.text = persoon.naam + " " + persoon.voornaam
-        cell.detailTextLabel?.text = persoon.telefoonnummer.description
+        cell.textLabel?.text = persoon.voornaam
+        cell.detailTextLabel?.text = persoon.naam
         cell.imageView?.image = persoon.foto
 
         return cell

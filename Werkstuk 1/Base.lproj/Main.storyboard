@@ -227,10 +227,10 @@
             </objects>
             <point key="canvasLocation" x="-810" y="82"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Controller-->
         <scene sceneID="BBn-cd-kG0">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="stO-IB-Eo7" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="stO-IB-Eo7" customClass="TabController" customModule="Werkstuk_1" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="VP2-Ty-jX7"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9UC-Oc-qsv">
@@ -272,6 +272,9 @@
                         <viewLayoutGuide key="safeArea" id="ae8-Ub-pcj"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="v4Y-Pd-swx"/>
+                    <connections>
+                        <outlet property="MijnTweedeMap" destination="olE-Mu-ZeU" id="oTd-1M-1Ga"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKI-ad-yrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

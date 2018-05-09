@@ -22,6 +22,7 @@
 		74A6E60D20A1A92F00D20D63 /* Persoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6E60C20A1A92F00D20D63 /* Persoon.swift */; };
 		74A6E60F20A1A99100D20D63 /* Adres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6E60E20A1A99100D20D63 /* Adres.swift */; };
 		B3B3282520A37DBA0053022F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3282420A37DBA0053022F /* MapViewController.swift */; };
+		B3B3282920A38A160053022F /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3282820A38A160053022F /* TabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		74A6E60C20A1A92F00D20D63 /* Persoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persoon.swift; sourceTree = "<group>"; };
 		74A6E60E20A1A99100D20D63 /* Adres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adres.swift; sourceTree = "<group>"; };
 		B3B3282420A37DBA0053022F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B3B3282820A38A160053022F /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				741770B020A32E20007A4E70 /* MijnAnnotation.swift */,
 				741770B620A3407E007A4E70 /* ImageViewController.swift */,
 				B3B3282420A37DBA0053022F /* MapViewController.swift */,
+				B3B3282820A38A160053022F /* TabController.swift */,
 			);
 			path = "Werkstuk 1";
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				74A6E60F20A1A99100D20D63 /* Adres.swift in Sources */,
 				74A6E5DF20A1A68000D20D63 /* AppDelegate.swift in Sources */,
 				B3B3282520A37DBA0053022F /* MapViewController.swift in Sources */,
+				B3B3282920A38A160053022F /* TabController.swift in Sources */,
 				741770AD20A2FFC3007A4E70 /* TableViewController.swift in Sources */,
 				74A6E60D20A1A92F00D20D63 /* Persoon.swift in Sources */,
 				741770B720A3407E007A4E70 /* ImageViewController.swift in Sources */,
