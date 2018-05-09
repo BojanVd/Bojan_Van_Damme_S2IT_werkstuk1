@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class ItemViewController: UIViewController {
     
@@ -18,10 +20,7 @@ class ItemViewController: UIViewController {
     @IBOutlet weak var StraatHuisnummer: UILabel!
     @IBOutlet weak var GemeentePostcode: UILabel!
     
-    @IBAction func transformImage(_ sender: UIPinchGestureRecognizer) {
-        self.PersoonFoto.transform =  CGAffineTransform(scaleX: sender.scale, y: sender.scale)
-        //sender.scale = 1
-    }
+    @IBOutlet weak var MijnMap: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +32,24 @@ class ItemViewController: UIViewController {
         self.GSMNummer.text = temp.telefoonnummer.description
         self.StraatHuisnummer.text = temp.adres.straat + " " + temp.adres.huisnummer.description
         self.GemeentePostcode.text = temp.adres.gemeente + " " + temp.adres.postcode.description
+        
+        let coordinate:CLLocationCoordinate2D = temp.gps
+        let annotation:MijnAnnotation = MijnAnnotation(coordinate: coordinate , title: temp.naam)
+        
+        self.MijnMap.addAnnotation(annotation)
+        self.MijnMap.selectAnnotation(annotation, animated: true)        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let center = CLLocationCoordinate2D(latitude: (temp.coordinate.latitude)!, longitude: (temp.coordinate.longitude)!)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+        
+        mapView.setRegion(region, animated: true)
     }
     
 
