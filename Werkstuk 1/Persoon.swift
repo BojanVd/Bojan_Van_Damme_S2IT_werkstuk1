@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 
 class Persoon {
@@ -15,8 +16,17 @@ class Persoon {
     var voornaam: String
     var foto: UIImage
     var adres: Adres
-    //var gps:
+    var gps: CCLocationCoordinate2D
     var telefoonnummer: Int
+    
+    init(){
+        naam = ""
+        voornaam = ""
+        foto = UIImage()
+        adres = Adres()
+        gps = CLLocationCoordinate2D()
+        telefoonnummer = 0
+    }
     
     init(naam: String, voornaam: String, foto:UIImage, adres: Adres, telefoonnummer: Int) {
         self.naam = naam
