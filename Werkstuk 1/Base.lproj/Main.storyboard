@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zWS-05-Iik">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zWS-05-Iik">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Vrienden-->
         <scene sceneID="hKu-BC-Uma">
             <objects>
                 <tableViewController id="Pzt-5E-Dgt" customClass="TableViewController" customModule="Werkstuk_1" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="L6y-gU-IWK"/>
-                    <navigationItem key="navigationItem" id="Kv9-oS-BEn"/>
+                    <navigationItem key="navigationItem" title="Vrienden" id="Kv9-oS-BEn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMS-P9-7vP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,12 +188,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmq-5O-PKY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jmq-5O-PKY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jmq-5O-PKY" firstAttribute="leading" secondItem="aM4-jv-5cJ" secondAttribute="leading" id="Nwo-aI-U5E"/>
+                            <constraint firstItem="jmq-5O-PKY" firstAttribute="top" secondItem="Pg3-nU-MMY" secondAttribute="top" id="W3l-Sp-KAw"/>
+                            <constraint firstItem="jmq-5O-PKY" firstAttribute="bottom" secondItem="Pg3-nU-MMY" secondAttribute="bottom" id="XEx-Ff-Ufu"/>
+                            <constraint firstAttribute="trailing" secondItem="jmq-5O-PKY" secondAttribute="trailing" id="igp-3e-cyr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Pg3-nU-MMY"/>
                     </view>
                     <connections>
@@ -229,6 +234,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="VP2-Ty-jX7"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9UC-Oc-qsv">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -241,21 +247,35 @@
             </objects>
             <point key="canvasLocation" x="335" y="-702"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="h34-qS-dMo">
             <objects>
-                <viewController id="zi7-TT-SUc" sceneMemberID="viewController">
+                <viewController id="zi7-TT-SUc" customClass="MapViewController" customModule="Werkstuk_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RGT-DJ-bgj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olE-Mu-ZeU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zi7-TT-SUc" id="pKw-7R-QTz"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="olE-Mu-ZeU" firstAttribute="bottom" secondItem="ae8-Ub-pcj" secondAttribute="bottom" id="3Ea-pj-ORD"/>
+                            <constraint firstItem="olE-Mu-ZeU" firstAttribute="leading" secondItem="RGT-DJ-bgj" secondAttribute="leading" id="EtY-BI-5el"/>
+                            <constraint firstAttribute="trailing" secondItem="olE-Mu-ZeU" secondAttribute="trailing" id="TDA-r7-6Jw"/>
+                            <constraint firstItem="olE-Mu-ZeU" firstAttribute="top" secondItem="ae8-Ub-pcj" secondAttribute="top" id="sPU-wD-x8T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ae8-Ub-pcj"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="v4Y-Pd-swx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKI-ad-yrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="-699"/>
+            <point key="canvasLocation" x="1080.8" y="-699.40029985007504"/>
         </scene>
     </scenes>
 </document>

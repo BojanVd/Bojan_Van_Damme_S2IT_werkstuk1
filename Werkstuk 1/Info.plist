@@ -28,6 +28,8 @@
 	<string>Give me acces pretty please</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Also here pls</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>And here thx</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
