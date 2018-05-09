@@ -31,27 +31,24 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.MijnTweedeMap.addAnnotation(annotationSteve)
         self.MijnTweedeMap.addAnnotation(annotationNatasha)
         self.MijnTweedeMap.showAnnotations(self.MijnTweedeMap.annotations, animated: true)
-        //self.MijnTweedeMap.showsUserLocation = true
         
         // Do any additional setup after loading the view.
         locationManager.requestAlwaysAuthorization()
         
         locationManager.startUpdatingLocation()
-        
-        //MijnTweedeMap.setCenter((MijnTweedeMap.userLocation.location?.coordinate)!, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
+    
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         mapView.setRegion(region, animated: true)
-    }*/
+    }
  
     
 
