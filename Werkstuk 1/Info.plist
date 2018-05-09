@@ -24,6 +24,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Give me acces pretty please</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Also here pls</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

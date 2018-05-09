@@ -10,6 +10,7 @@
 		741770AD20A2FFC3007A4E70 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741770AC20A2FFC3007A4E70 /* TableViewController.swift */; };
 		741770AF20A305D1007A4E70 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741770AE20A305D1007A4E70 /* ItemViewController.swift */; };
 		741770B120A32E20007A4E70 /* MijnAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741770B020A32E20007A4E70 /* MijnAnnotation.swift */; };
+		741770B420A33904007A4E70 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741770B320A33904007A4E70 /* MapKit.framework */; };
 		74A6E5DF20A1A68000D20D63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6E5DE20A1A68000D20D63 /* AppDelegate.swift */; };
 		74A6E5E120A1A68000D20D63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6E5E020A1A68000D20D63 /* ViewController.swift */; };
 		74A6E5E420A1A68000D20D63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A6E5E220A1A68000D20D63 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		741770AC20A2FFC3007A4E70 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		741770AE20A305D1007A4E70 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		741770B020A32E20007A4E70 /* MijnAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MijnAnnotation.swift; sourceTree = "<group>"; };
+		741770B320A33904007A4E70 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		74A6E5DB20A1A68000D20D63 /* Werkstuk 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Werkstuk 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A6E5DE20A1A68000D20D63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74A6E5E020A1A68000D20D63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				741770B420A33904007A4E70 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		741770B220A33904007A4E70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				741770B320A33904007A4E70 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		74A6E5D220A1A67F00D20D63 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +102,7 @@
 				74A6E5F220A1A68100D20D63 /* Werkstuk 1Tests */,
 				74A6E5FD20A1A68100D20D63 /* Werkstuk 1UITests */,
 				74A6E5DC20A1A68000D20D63 /* Products */,
+				741770B220A33904007A4E70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,6 +221,11 @@
 					74A6E5DA20A1A68000D20D63 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					74A6E5EE20A1A68100D20D63 = {
 						CreatedOnToolsVersion = 9.2;

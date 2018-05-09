@@ -68,76 +68,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffx-hJ-1K6">
-                                <rect key="frame" x="16" y="293" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefoonnummer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQ6-Or-3OH">
-                                <rect key="frame" x="16" y="329" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Straat &amp; huisnummer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mj3-7F-ivK">
-                                <rect key="frame" x="16" y="387" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gemeente &amp; postcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAn-qd-sgt">
-                                <rect key="frame" x="16" y="416" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDY-Os-Lod">
-                                <rect key="frame" x="16" y="358" width="343" height="21"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Adres:">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFontEmphasized"/>
-                                            <font key="NSOriginalFont" size="17" name=".AppleSystemUIFontEmphasized"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQl-eL-idQ">
-                                <rect key="frame" x="0.0" y="480" width="375" height="187"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="187" id="CgJ-Ua-mx9"/>
-                                </constraints>
-                            </mapView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vDu-42-lvn">
                                 <rect key="frame" x="0.0" y="64" width="375" height="204"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="204" id="S4x-yd-h57"/>
+                                </constraints>
                             </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQl-eL-idQ">
+                                <rect key="frame" x="0.0" y="463" width="375" height="204"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="204" id="SNZ-Nm-9Pa"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="JeN-LM-8WF" id="gP7-Nq-Q4H"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ao4-mb-OIV">
+                                <rect key="frame" x="0.0" y="290" width="375" height="165"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffx-hJ-1K6">
+                                        <rect key="frame" x="8" y="8" width="45" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefoonnummer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQ6-Or-3OH">
+                                        <rect key="frame" x="8" y="37" width="343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDY-Os-Lod">
+                                        <rect key="frame" x="8" y="66" width="343" height="21"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Adres:">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name=".AppleSystemUIFontEmphasized"/>
+                                                    <font key="NSOriginalFont" size="17" name=".AppleSystemUIFontEmphasized"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Straat &amp; huisnummer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mj3-7F-ivK">
+                                        <rect key="frame" x="8" y="95" width="343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gemeente &amp; postcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAn-qd-sgt">
+                                        <rect key="frame" x="8" y="124" width="343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="mj3-7F-ivK" firstAttribute="trailing" secondItem="eAn-qd-sgt" secondAttribute="trailing" id="C68-DG-ABN"/>
+                                    <constraint firstItem="RQ6-Or-3OH" firstAttribute="leading" secondItem="yDY-Os-Lod" secondAttribute="leading" id="GyS-Yb-fgL"/>
+                                    <constraint firstItem="RQ6-Or-3OH" firstAttribute="top" secondItem="Ffx-hJ-1K6" secondAttribute="bottom" constant="8" symbolic="YES" id="IE2-dI-UVL"/>
+                                    <constraint firstItem="Ffx-hJ-1K6" firstAttribute="top" secondItem="ao4-mb-OIV" secondAttribute="topMargin" id="LWB-Np-wYa"/>
+                                    <constraint firstItem="mj3-7F-ivK" firstAttribute="leading" secondItem="eAn-qd-sgt" secondAttribute="leading" id="R0n-Zj-eKW"/>
+                                    <constraint firstItem="Ffx-hJ-1K6" firstAttribute="leading" secondItem="ao4-mb-OIV" secondAttribute="leadingMargin" id="SPE-0N-DSN"/>
+                                    <constraint firstItem="mj3-7F-ivK" firstAttribute="top" secondItem="yDY-Os-Lod" secondAttribute="bottom" constant="8" symbolic="YES" id="Vm7-nz-KsQ"/>
+                                    <constraint firstItem="eAn-qd-sgt" firstAttribute="top" secondItem="mj3-7F-ivK" secondAttribute="bottom" constant="8" symbolic="YES" id="b4n-vo-rBC"/>
+                                    <constraint firstItem="yDY-Os-Lod" firstAttribute="top" secondItem="RQ6-Or-3OH" secondAttribute="bottom" constant="8" symbolic="YES" id="bAE-Ed-vdJ"/>
+                                    <constraint firstItem="RQ6-Or-3OH" firstAttribute="trailing" secondItem="yDY-Os-Lod" secondAttribute="trailing" id="cJe-He-1gA"/>
+                                    <constraint firstAttribute="trailing" secondItem="RQ6-Or-3OH" secondAttribute="trailing" constant="24" id="dog-KF-yFX"/>
+                                    <constraint firstItem="Ffx-hJ-1K6" firstAttribute="leading" secondItem="RQ6-Or-3OH" secondAttribute="leading" id="e68-4c-x2G"/>
+                                    <constraint firstItem="yDY-Os-Lod" firstAttribute="leading" secondItem="mj3-7F-ivK" secondAttribute="leading" id="kmA-XX-b8N"/>
+                                    <constraint firstItem="yDY-Os-Lod" firstAttribute="trailing" secondItem="mj3-7F-ivK" secondAttribute="trailing" id="xbf-ao-6R1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vDu-42-lvn" firstAttribute="leading" secondItem="eqs-zw-GF3" secondAttribute="leading" id="2Nj-l9-L6M"/>
-                            <constraint firstItem="mj3-7F-ivK" firstAttribute="top" secondItem="yDY-Os-Lod" secondAttribute="bottom" constant="8" symbolic="YES" id="7YR-3e-O93"/>
-                            <constraint firstItem="vDu-42-lvn" firstAttribute="trailing" secondItem="MQl-eL-idQ" secondAttribute="trailing" id="7yW-5E-aSR"/>
-                            <constraint firstItem="Ffx-hJ-1K6" firstAttribute="trailing" secondItem="RQ6-Or-3OH" secondAttribute="trailing" id="BU9-vf-vhV"/>
-                            <constraint firstItem="mj3-7F-ivK" firstAttribute="leading" secondItem="eAn-qd-sgt" secondAttribute="leading" id="DeQ-nX-xUy"/>
-                            <constraint firstItem="MQl-eL-idQ" firstAttribute="bottom" secondItem="Kej-77-yBe" secondAttribute="bottom" id="Eyc-MG-VaW"/>
-                            <constraint firstItem="Ffx-hJ-1K6" firstAttribute="leading" secondItem="RQ6-Or-3OH" secondAttribute="leading" id="PIJ-9r-YRd"/>
-                            <constraint firstItem="eAn-qd-sgt" firstAttribute="top" secondItem="mj3-7F-ivK" secondAttribute="bottom" constant="8" symbolic="YES" id="PzV-sQ-tNs"/>
-                            <constraint firstItem="RQ6-Or-3OH" firstAttribute="top" secondItem="Ffx-hJ-1K6" secondAttribute="bottom" constant="15" id="R6h-uz-agF"/>
-                            <constraint firstItem="vDu-42-lvn" firstAttribute="top" secondItem="Kej-77-yBe" secondAttribute="top" id="SNh-DM-Pbz"/>
-                            <constraint firstItem="Ffx-hJ-1K6" firstAttribute="top" secondItem="vDu-42-lvn" secondAttribute="bottom" constant="25" id="UIq-mz-6hX"/>
-                            <constraint firstItem="MQl-eL-idQ" firstAttribute="top" secondItem="eAn-qd-sgt" secondAttribute="bottom" constant="43" id="Vvn-uE-iYJ"/>
-                            <constraint firstItem="yDY-Os-Lod" firstAttribute="trailing" secondItem="mj3-7F-ivK" secondAttribute="trailing" id="cut-yR-fRP"/>
-                            <constraint firstItem="mj3-7F-ivK" firstAttribute="trailing" secondItem="eAn-qd-sgt" secondAttribute="trailing" id="dgl-4M-0lK"/>
-                            <constraint firstItem="yDY-Os-Lod" firstAttribute="leading" secondItem="mj3-7F-ivK" secondAttribute="leading" id="e27-Sx-7zR"/>
-                            <constraint firstItem="vDu-42-lvn" firstAttribute="centerX" secondItem="Ffx-hJ-1K6" secondAttribute="centerX" id="fZM-Ps-zty"/>
-                            <constraint firstItem="RQ6-Or-3OH" firstAttribute="trailing" secondItem="yDY-Os-Lod" secondAttribute="trailing" id="nZi-tF-w8C"/>
-                            <constraint firstItem="vDu-42-lvn" firstAttribute="leading" secondItem="MQl-eL-idQ" secondAttribute="leading" id="nf0-cz-IHv"/>
-                            <constraint firstItem="RQ6-Or-3OH" firstAttribute="leading" secondItem="yDY-Os-Lod" secondAttribute="leading" id="pte-eR-NIe"/>
-                            <constraint firstItem="yDY-Os-Lod" firstAttribute="top" secondItem="RQ6-Or-3OH" secondAttribute="bottom" constant="8" symbolic="YES" id="rKE-pT-5mK"/>
-                            <constraint firstAttribute="trailing" secondItem="vDu-42-lvn" secondAttribute="trailing" id="xG7-C1-mBc"/>
-                            <constraint firstItem="Ffx-hJ-1K6" firstAttribute="leading" secondItem="eqs-zw-GF3" secondAttribute="leadingMargin" id="yiz-xx-Qhg"/>
+                            <constraint firstItem="ao4-mb-OIV" firstAttribute="leading" secondItem="MQl-eL-idQ" secondAttribute="leading" id="5Zk-ca-Fcm"/>
+                            <constraint firstAttribute="trailing" secondItem="vDu-42-lvn" secondAttribute="trailing" id="5se-7F-PLX"/>
+                            <constraint firstItem="vDu-42-lvn" firstAttribute="trailing" secondItem="ao4-mb-OIV" secondAttribute="trailing" id="Arj-H6-n6Z"/>
+                            <constraint firstItem="vDu-42-lvn" firstAttribute="top" secondItem="Kej-77-yBe" secondAttribute="top" id="Lw4-7d-mDC"/>
+                            <constraint firstItem="ao4-mb-OIV" firstAttribute="trailing" secondItem="MQl-eL-idQ" secondAttribute="trailing" id="MZ8-SD-ueg"/>
+                            <constraint firstItem="vDu-42-lvn" firstAttribute="leading" secondItem="ao4-mb-OIV" secondAttribute="leading" id="UWh-O6-tdz"/>
+                            <constraint firstItem="MQl-eL-idQ" firstAttribute="bottom" secondItem="Kej-77-yBe" secondAttribute="bottom" id="YRa-3b-uJ2"/>
+                            <constraint firstItem="vDu-42-lvn" firstAttribute="leading" secondItem="eqs-zw-GF3" secondAttribute="leading" id="bOX-9J-yFX"/>
+                            <constraint firstItem="MQl-eL-idQ" firstAttribute="top" secondItem="ao4-mb-OIV" secondAttribute="bottom" constant="8" symbolic="YES" id="faC-W8-0fI"/>
+                            <constraint firstItem="ao4-mb-OIV" firstAttribute="top" secondItem="vDu-42-lvn" secondAttribute="bottom" constant="22" id="jdE-sl-khM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kej-77-yBe"/>
                     </view>

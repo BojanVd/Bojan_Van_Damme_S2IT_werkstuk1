@@ -13,6 +13,7 @@ import CoreLocation
 class ItemViewController: UIViewController {
     
     var temp = Persoon()
+    var locationManager = CLLocationManager()
 
     @IBOutlet weak var VolledigeNaam: UILabel!
     @IBOutlet weak var PersoonFoto: UIImageView!
@@ -33,6 +34,11 @@ class ItemViewController: UIViewController {
         self.StraatHuisnummer.text = temp.adres.straat + " " + temp.adres.huisnummer.description
         self.GemeentePostcode.text = temp.adres.gemeente + " " + temp.adres.postcode.description
         
+        locationManager.requestAlwaysAuthorization();
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.startUpdatingLocation()
+        }
+        
         let coordinate:CLLocationCoordinate2D = temp.gps
         let annotation:MijnAnnotation = MijnAnnotation(coordinate: coordinate , title: temp.naam)
         
@@ -46,7 +52,7 @@ class ItemViewController: UIViewController {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let center = CLLocationCoordinate2D(latitude: (temp.coordinate.latitude)!, longitude: (temp.coordinate.longitude)!)
+        let center = CLLocationCoordinate2D(latitude: (temp.gps.latitude), longitude: (temp.gps.longitude))
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         
         mapView.setRegion(region, animated: true)
