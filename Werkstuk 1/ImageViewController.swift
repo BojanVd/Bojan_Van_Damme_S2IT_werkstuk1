@@ -10,18 +10,17 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
-    //Var invullen met image uit vorige view
+    //Lege var aanmaken vr image
     var image:UIImage = UIImage()
     
     //Inladen van image element in view
-    @IBOutlet weak var uiImg: UIImageView!
+    @IBOutlet weak var UIimg: UIImageView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Image op view instellen
-        self.uiImg.image = image
+        self.UIimg.image = image
     }
 
     override func didReceiveMemoryWarning() {
