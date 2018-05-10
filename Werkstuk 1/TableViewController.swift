@@ -15,27 +15,25 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        //Aanmaken adressen
         let adresSteveRogers = Adres(straat: "Captainstraat", huisnummer: 1, postcode: 2000, gemeente: "New York")
         let adresNatashaRomanoff = Adres(straat: "Widowlaan", huisnummer: 20, postcode: 3550, gemeente: "Las Vegas")
         let adresBruceBanner = Adres(straat: "Hulksebaan", huisnummer: 121, postcode: 1111, gemeente: "California")
+        
+        //Aanmaken lege GPS coordinaten variabele
         var gpsSteve = CLLocationCoordinate2D()
         var gpsNatasha = CLLocationCoordinate2D()
         var gpsBruce = CLLocationCoordinate2D()
         
+        //Invullen van de GPS coordinaten variabele met info uit tabcontroller
         if let tbc = self.tabBarController as? TabController{
             gpsSteve = tbc.coorSteve
             gpsNatasha = tbc.coorNatasha
             gpsBruce = tbc.coorBruce
         }
         
-        
+        //Aanmaken personen
         personen.append(Persoon(naam: "Rogers", voornaam: "Steve", foto: UIImage(named: "Steve")!, adres: adresSteveRogers, gps: gpsSteve , telefoonnummer: "+32 412 34 56 78"))
         personen.append(Persoon(naam: "Romanoff", voornaam: "Natasha", foto: UIImage(named: "Natasha")!,adres: adresNatashaRomanoff, gps: gpsNatasha, telefoonnummer: "+32 487 65 43 21"))
         personen.append(Persoon(naam: "Banner", voornaam: "Bruce", foto: UIImage(named: "Bruce")!,adres: adresBruceBanner, gps: gpsBruce, telefoonnummer: "+32 421 43 54 65"))
@@ -65,6 +63,7 @@ class TableViewController: UITableViewController {
         // Configure the cell...
         let persoon = personen[indexPath.row]
         
+        //Invullen TableView
         cell.textLabel?.text = persoon.voornaam
         cell.detailTextLabel?.text = persoon.naam
         cell.imageView?.image = persoon.foto
@@ -78,6 +77,8 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+
+        //Meegeven informatie van aangeklikte persoon
         if let nextVC = segue.destination as? ItemViewController
         {
             let indexPath = self.tableView.indexPathForSelectedRow!

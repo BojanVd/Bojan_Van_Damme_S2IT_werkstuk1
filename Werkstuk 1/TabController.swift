@@ -11,10 +11,11 @@ import MapKit
 import CoreLocation
 
 class TabController: UITabBarController {
+    
+    //Aanmaken van coordinaten variabele die kunnen gebruikt worden in de views binnen de tabcontroller
     let coorSteve = CLLocationCoordinate2D(latitude: 51.491873, longitude: -0.128463)
     let coorNatasha = CLLocationCoordinate2D (latitude: 51.512275, longitude: -0.144021)
     let coorBruce = CLLocationCoordinate2D (latitude: 51.503431, longitude: -0.151313)
-
 
     override func viewDidLoad() {
         super.viewDidLoad()

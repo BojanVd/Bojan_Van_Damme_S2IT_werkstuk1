@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
+//Aanmaken Persoon klasse
 
 class Persoon {
     var naam: String

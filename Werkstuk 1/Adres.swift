@@ -7,6 +7,9 @@
 //
 
 import Foundation
+
+//Aanmaken Adres klasse
+
 class Adres {
     var straat: String
     var huisnummer: Int
@@ -18,7 +21,6 @@ class Adres {
         huisnummer = 0
         postcode = 0
         gemeente = ""
-        
     }
     
     init(straat: String, huisnummer: Int, postcode: Int, gemeente: String) {

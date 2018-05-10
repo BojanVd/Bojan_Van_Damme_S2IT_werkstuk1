@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+//Aanmaken van een annotation klase
+
 class MijnAnnotation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
