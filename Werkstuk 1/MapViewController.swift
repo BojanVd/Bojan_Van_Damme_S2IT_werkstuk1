@@ -19,17 +19,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         var gpsSteve = CLLocationCoordinate2D()
         var gpsNatasha = CLLocationCoordinate2D()
+        var gpsBruce = CLLocationCoordinate2D()
         
         if let tbc = self.tabBarController as? TabController{
             gpsSteve = tbc.coorSteve
             gpsNatasha = tbc.coorNatasha
+            gpsBruce = tbc.coorBruce
         }
         
         let annotationSteve:MijnAnnotation = MijnAnnotation(coordinate: gpsSteve, title: "Steve")
         let annotationNatasha:MijnAnnotation = MijnAnnotation(coordinate: gpsNatasha, title: "Natasha")
+        let annotationBruce:MijnAnnotation = MijnAnnotation(coordinate: gpsBruce, title: "Bruce")
         
         self.MijnTweedeMap.addAnnotation(annotationSteve)
         self.MijnTweedeMap.addAnnotation(annotationNatasha)
+        self.MijnTweedeMap.addAnnotation(annotationBruce)
         self.MijnTweedeMap.showAnnotations(self.MijnTweedeMap.annotations, animated: true)
         
         // Do any additional setup after loading the view.
@@ -45,7 +49,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04))
         
         mapView.setRegion(region, animated: true)
     }

@@ -24,17 +24,21 @@ class TableViewController: UITableViewController {
         
         let adresSteveRogers = Adres(straat: "Captainstraat", huisnummer: 1, postcode: 2000, gemeente: "New York")
         let adresNatashaRomanoff = Adres(straat: "Widowlaan", huisnummer: 20, postcode: 3550, gemeente: "Las Vegas")
+        let adresBruceBanner = Adres(straat: "Hulksebaan", huisnummer: 121, postcode: 1111, gemeente: "California")
         var gpsSteve = CLLocationCoordinate2D()
         var gpsNatasha = CLLocationCoordinate2D()
+        var gpsBruce = CLLocationCoordinate2D()
         
         if let tbc = self.tabBarController as? TabController{
             gpsSteve = tbc.coorSteve
             gpsNatasha = tbc.coorNatasha
+            gpsBruce = tbc.coorBruce
         }
         
         
         personen.append(Persoon(naam: "Rogers", voornaam: "Steve", foto: UIImage(named: "Steve")!, adres: adresSteveRogers, gps: gpsSteve , telefoonnummer: "+32 412 34 56 78"))
         personen.append(Persoon(naam: "Romanoff", voornaam: "Natasha", foto: UIImage(named: "Natasha")!,adres: adresNatashaRomanoff, gps: gpsNatasha, telefoonnummer: "+32 487 65 43 21"))
+        personen.append(Persoon(naam: "Banner", voornaam: "Bruce", foto: UIImage(named: "Bruce")!,adres: adresBruceBanner, gps: gpsBruce, telefoonnummer: "+32 421 43 54 65"))
     }
     
     override func didReceiveMemoryWarning() {

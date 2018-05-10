@@ -11,8 +11,10 @@ import MapKit
 import CoreLocation
 
 class TabController: UITabBarController {
-    let coorSteve = CLLocationCoordinate2D(latitude: 39.545179, longitude: -76.827946)
-    let coorNatasha = CLLocationCoordinate2D (latitude: 37.899604, longitude: -79.113103)
+    let coorSteve = CLLocationCoordinate2D(latitude: 51.491873, longitude: -0.128463)
+    let coorNatasha = CLLocationCoordinate2D (latitude: 51.512275, longitude: -0.144021)
+    let coorBruce = CLLocationCoordinate2D (latitude: 51.503431, longitude: -0.151313)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
